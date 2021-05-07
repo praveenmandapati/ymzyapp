@@ -1,0 +1,44 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">LOGO</a>
+  </nav>
+
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-5 card bg-light">
+            <div class="card-body p-3" *ngIf="customerStatus">
+                <h5>Customer Information</h5>
+                <p>Name : <span>{{customerStatus.customerName}}</span></p>
+                <p>Phone Number : <span>{{customerStatus.phoneNo}}</span></p>
+                <p>Email : <span>{{customerStatus.emailId}}</span></p>
+                <p>Address : <span>{{customerStatusaddress.fullAddress}}</span></p>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5 card bg-light">
+            <div class="card-body p-3">
+                <h5>Order Details</h5>
+                <div *ngFor="let item of orderDetails;">
+                    <p>Order Name : <span>{{item.orderName}}</span></p>
+                    <p>quantity : <span>{{item.quantity}}</span></p>
+                    <p>value : <span>{{item.value}}</span></p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-6 card bg-light">
+            <div class="card-body p-3" *ngIf="restaurantStatus">
+              <h5> Restaurant Status</h5>
+              <p>Outlet Name : <span>{{restaurantStatus.outletName}}</span></p>
+              <p>Phone Number : <span>{{restaurantStatus.mobile}}</span></p>
+              <p>Email : <span>{{restaurantStatus.email}}</span></p>
+              <p>Address : <span>{{restaurantStatusaddress.addressLine}}</span></p>
+            </div>
+        </div>
+    </div>
+
+</div>
